@@ -1,4 +1,5 @@
 import React from 'react';
+import './Input.scss';
 
 interface InputInfo {
   text: string,
@@ -9,6 +10,6 @@ interface InputInfo {
 }
 export const Input: React.FC<InputInfo> = ({onChange, onError, text, type, className}) => {
   return (
-    <input className={className} type={type} placeholder={text}/>
+    <input className='form-input' type={type} placeholder={text}/>
   )
 }

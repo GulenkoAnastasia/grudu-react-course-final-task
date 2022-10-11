@@ -4,7 +4,7 @@ import { Form } from "../../components/Form";
 export const SignUpPage = () => {
   return (
     <div>
-      <Form></Form>
+      <Form title='Sign up'></Form>
     </div>
   )
 }

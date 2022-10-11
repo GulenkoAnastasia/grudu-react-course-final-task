@@ -1,0 +1,12 @@
+.form-input {
+  margin-bottom: 20px;
+  line-height: 36px;
+  border: 4px solid #b8a9c9;
+  border-radius: 4px;
+  background: #d6d4e0;
+  font-size: 16px;
+  &::placeholder {
+    font-size: 16px;
+  }
+
+}

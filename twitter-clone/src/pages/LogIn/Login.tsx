@@ -4,7 +4,7 @@ import { Form } from "../../components/Form";
 export const LoginPage = () => {
   return (
     <div>
-      <Form></Form>
+      <Form title='Log in'></Form>
     </div>
   )
 }
