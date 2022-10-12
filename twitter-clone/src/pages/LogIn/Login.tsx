@@ -1,7 +1,7 @@
-import React from "react";
-import { Form } from "../../components/Form";
+import React from 'react'
+import { Form } from '../../components/Form'
 
-export const LoginPage = () => {
+export const LoginPage: React.FC = () => {
   return (
     <div>
       <Form title='Log in'></Form>

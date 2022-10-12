@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-export const TweetsPage = () => {
+export const TweetsPage: React.FC = () => {
   return (
     <div>
       Tweets

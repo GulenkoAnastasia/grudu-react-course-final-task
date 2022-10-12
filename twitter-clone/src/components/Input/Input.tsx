@@ -1,14 +1,14 @@
-import React from 'react';
-import './Input.scss';
+import React from 'react'
+import './Input.scss'
 
 interface InputInfo {
-  text: string,
-  onChange?: () => void,
-  onError?: () => void,
-  type: string,
+  text: string
+  onChange?: () => void
+  onError?: () => void
+  type: string
   className?: string
 }
-export const Input: React.FC<InputInfo> = ({onChange, onError, text, type, className}) => {
+export const Input: React.FC<InputInfo> = ({ onChange, onError, text, type, className }) => {
   return (
     <input className='form-input' type={type} placeholder={text}/>
   )

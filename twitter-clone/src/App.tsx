@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginPage } from './pages/LogIn';
-import { SignUpPage } from './pages/SignUp';
-import { TweetsPage } from './pages/Tweets/Tweets';
-import './App.scss';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LoginPage } from './pages/LogIn'
+import { SignUpPage } from './pages/SignUp'
+import { TweetsPage } from './pages/Tweets/Tweets'
+import './App.scss'
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
     <div className='main'>
     <BrowserRouter>
@@ -17,5 +17,5 @@ export const App = () => {
       </Routes>
     </BrowserRouter>
     </div>
-  );
+  )
 }

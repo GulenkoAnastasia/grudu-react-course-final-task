@@ -1,1 +1,1 @@
-import { TweetsPage } from './Tweets';
+export { TweetsPage } from './Tweets'
