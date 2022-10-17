@@ -1,28 +1,45 @@
+import { useFormik } from 'formik'
 import React from 'react'
-import { Input } from '../Input'
+import * as yup from 'yup'
 import { Button } from '../Button'
-import './Form.scss'
-import { FormText } from '../FormText/FormText'
+import { FormText } from '../FormText'
+import { Input } from '../Input'
+interface initialValuesInfo {
+  view: string
+  initialValues: Record<string, string>
+  validationSchema: yup.ObjectSchema<any>
+  onSubmit: (values: Record<string, string>) => void
+}
 
-export const Form: React.FC<{ title: string }> = ({ title }) => {
-  const inputFields: Record<string, string[]> = {
-    'Log in': ['Username', 'Password'],
-    'Sign up': ['Email', 'Password', 'Username', 'Full name']
-  }
+export const Form: React.FC<initialValuesInfo> = ({ view, initialValues, validationSchema, onSubmit }) => {
+  const { values, handleChange, handleSubmit, handleBlur, errors, touched } = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit
+  })
+
   return (
     <div className='form'>
-      <form className='form__content'>
-        <h2>{title}</h2>
-        {inputFields[title].map((inputName: string) => {
+      <form onSubmit={handleSubmit} className='form__content'>
+        <h2>{view}</h2>
+        {Object.entries(values).map(([key, value]) => {
           return <Input
-          key={inputName}
-          type={inputName === 'Password' || 'Email' ? inputName : 'text'}
-          text={inputName}>
-          </Input>
+            key={key}
+            onChange={handleChange}
+            value={value}
+            handleBlur={handleBlur}
+            type='text'
+            text={key}
+            error={errors[key] &&
+              touched[key]
+              ? errors[key]
+              : ''}
+            id={key}>
+            </Input>
         })}
-          <Button text={title}></Button>
+          <Button text={view}></Button>
       </form>
-      <FormText title={title}></FormText>
+      <FormText view={view}></FormText>
     </div>
   )
 }

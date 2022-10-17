@@ -3,13 +3,25 @@ import './Input.scss'
 
 interface InputInfo {
   text: string
-  onChange?: () => void
-  onError?: () => void
+  onChange: (e: React.ChangeEvent<any>) => void
+  handleBlur: (e: React.FocusEvent<any, Element>) => void
   type: string
-  className?: string
+  value: string
+  id: string
+  error?: string
 }
-export const Input: React.FC<InputInfo> = ({ onChange, onError, text, type, className }) => {
+export const Input: React.FC<InputInfo> = ({ onChange, text, type, value, id, error, handleBlur }) => {
   return (
-    <input className='form-input' type={type} placeholder={text}/>
+    <div>
+      <span className='error-text'>{error}</span>
+      <input
+        className={error ? 'form-input error-input' : 'form-input'}
+        value={value}
+        type={type}
+        placeholder={text}
+        onChange={onChange}
+        onBlur={handleBlur}
+        id={id}/>
+    </div>
   )
 }

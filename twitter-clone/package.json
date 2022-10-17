@@ -10,19 +10,22 @@
     "@types/node": "^16.11.21",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.0",
     "sass": "^1.55.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint --ext=.jsx,.js,.tsx,.ts  . --fix"
+    "lint": "node_modules/.bin/eslint --ext=.jsx,.js,.tsx,.ts  . --fix",
+    "server": "json-server --watch db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
