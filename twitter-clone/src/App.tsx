@@ -1,10 +1,10 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LoginPage } from './pages/LogInPage'
-import { SignupPage } from './pages/SignupPage'
-import { TweetsPage } from './pages/Tweets/Tweets'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LoginPage } from './pages/LogInPage';
+import { SignupPage } from './pages/SignupPage';
+import { TweetsPage } from './pages/Tweets/Tweets';
 // import './styles/reset.scss'
-import './App.scss'
+import './App.scss';
 
 export const App: React.FC = () => {
   return (
@@ -18,5 +18,5 @@ export const App: React.FC = () => {
       </Routes>
     </BrowserRouter>
     </div>
-  )
-}
+  );
+};

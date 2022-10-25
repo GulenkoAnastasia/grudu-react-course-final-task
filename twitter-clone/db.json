@@ -1,12 +1,120 @@
 {
   "tweets": [
-      {"id": "1", "author_id": "johnsmith", "text": "What are the pros of object-oriented programming?<br><br>Please, explain as if I'm 5."},
-      {"id": "2", "author_id": "carlanotarobot", "text": "Why use a debugger when you can fill your code with hundreds of <code>print()</code> statements?"},
-      {"id": "3", "author_id": "ameliawarner", "text": "Describe your relationship with JavaScript with one word."}
+    {
+      "id": "1",
+      "author_id": "johnsmith",
+      "text": "What are the pros of object-oriented programming?<br><br>Please, explain as if I'm 5."
+    },
+    {
+      "id": "2",
+      "author_id": "carlanotarobot",
+      "text": "Why use a debugger when you can fill your code with hundreds of <code>print()</code> statements?"
+    },
+    {
+      "id": "3",
+      "author_id": "ameliawarner",
+      "text": "Describe your relationship with JavaScript with one word."
+    }
   ],
   "users": [
-      {"id": "johnsmith", "name": "John Smith", "email": "johnsmith@gmail.com"},
-      {"id": "carlanotarobot", "name": "Carla Notarobot", "email": "carlanotarobot@hotmail.com"},
-      {"id": "ameliawarner", "name": "Amelia Warner", "email": "ameliawarner@yahoo.com"}
+    {
+      "id": "johnsmith",
+      "name": "John Smith",
+      "email": "johnsmith@gmail.com"
+    },
+    {
+      "id": "carlanotarobot",
+      "name": "Carla Notarobot",
+      "email": "carlanotarobot@hotmail.com"
+    },
+    {
+      "id": "ameliawarner",
+      "name": "Amelia Warner",
+      "email": "ameliawarner@yahoo.com"
+    },
+    {
+      "Email": "jack@google.com",
+      "Password": "12345678",
+      "Username": "Jack",
+      "Fullname": "Jack Stanly",
+      "id": "3LUz0HU"
+    },
+    {
+      "Email": "hbhbhf@mail.com",
+      "Password": "hbhdbhbshbdjshbd",
+      "Username": "Jack",
+      "Fullname": "knknkndknd",
+      "id": "soVGXqt"
+    },
+    {
+      "Email": "hbhbhf@mail.com",
+      "Password": "23456789",
+      "Username": "John",
+      "Fullname": "Glamit",
+      "id": "STHpoXV"
+    },
+    {
+      "Email": "knwndk@mail.com",
+      "Password": "edkeknklendklne",
+      "Username": "Kate",
+      "Fullname": "lnlknknklnc",
+      "id": "Q6MDmNN"
+    },
+    {
+      "Email": "hbfhbfhb@jnjnf.cjnc",
+      "Password": "dnjndjnd",
+      "Username": "kdkdkmdkmkdm",
+      "Fullname": "kdmkmdkmdkmdk",
+      "id": "p56kuP5"
+    },
+    {
+      "Email": "djndjnjdnd@jndjnd.cin",
+      "Password": "kenkdenkdnek",
+      "Username": "kedkendlkendklnee",
+      "Fullname": "lekmdlekdleknd",
+      "id": "Zy3UeIT"
+    },
+    {
+      "Email": "djndjnjdnd@jndjnd.cin",
+      "Password": "kenkdenkdnek",
+      "Username": "kedkendlfjbfjb",
+      "Fullname": "lekmdlekdleknd",
+      "id": "ja9GHZP"
+    },
+    {
+      "Email": "djndjnjdnd@jndjnd.cin",
+      "Password": "kenkdenkdnek",
+      "Username": "jkjewkjbkjewbfkjewbf",
+      "Fullname": "lekmdlekdleknd",
+      "id": "mHb9m__"
+    },
+    {
+      "Email": "kjnkjnkj@klknlkn.com",
+      "Password": "jkdbkjbekjwbdkjwbd",
+      "Username": "jnkjnkjvnvvv",
+      "Fullname": "eqjndkjnjdkne",
+      "id": "bXkTGW2"
+    },
+    {
+      "Email": "kjnkjnkj@klknlkn.com",
+      "Password": "jkdbkjbekjwbdkjwbd",
+      "Username": ",jnjnw,nejwn",
+      "Fullname": "eqjndkjnjdkne",
+      "id": "mMoNHsh"
+    },
+    {
+      "Email": "knwndk@mail.com",
+      "Password": "edkeknklendklne",
+      "Username": "jnjrnjnrjrn",
+      "Fullname": "lnlknknklnc",
+      "id": "kRkCyb3"
+    },
+    {
+      "Email": "jbjbhbb@hbhbhb.com",
+      "Password": "bejejnejnejne",
+      "Username": "njenjnejneje",
+      "Fullname": "jenjenjenjen",
+      "id": "OiG3fDl"
+    }
   ]
 }

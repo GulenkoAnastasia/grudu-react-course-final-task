@@ -1,1 +1,1 @@
-export { FormText } from './FormText'
+export { FormText } from './FormText';

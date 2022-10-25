@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './FormText.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './FormText.scss';
 
 export const FormText: React.FC<{ view: string }> = ({ view }) => {
   return (
@@ -16,5 +16,5 @@ export const FormText: React.FC<{ view: string }> = ({ view }) => {
       </>
     }
     </div>
-  )
-}
+  );
+};

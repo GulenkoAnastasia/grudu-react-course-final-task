@@ -1,10 +1,10 @@
-import React from 'react'
-import './Input.scss'
+import React from 'react';
+import './Input.scss';
 
 interface InputInfo {
   text: string
-  onChange: (e: React.ChangeEvent<any>) => void
-  handleBlur: (e: React.FocusEvent<any, Element>) => void
+  onChange: (e: React.ChangeEvent) => void
+  handleBlur: (e: React.FocusEvent) => void
   type: string
   value: string
   id: string
@@ -23,5 +23,5 @@ export const Input: React.FC<InputInfo> = ({ onChange, text, type, value, id, er
         onBlur={handleBlur}
         id={id}/>
     </div>
-  )
-}
+  );
+};
