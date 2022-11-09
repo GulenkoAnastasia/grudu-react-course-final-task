@@ -1,24 +1,56 @@
 import axios from 'axios';
+import { TweetInfo, UserData } from '../utils/types';
 
-export const getUsers = async (): Promise<Array<Record<string, string>>> => {
+export const getUserbyId = async (id: string): Promise<Record<string, string>> => {
   try {
-    const users = await axios.get('http://localhost:3001/users');
-    return users.data;
-  } catch (error) {
-    throw new Error('Can\'t get users');
+    const response = await axios.get(`http://localhost:3001/users/${id}`);
+    return response.data;
+  } catch (err) {
+    throw new Error('User doesn\'t exist');
   }
 };
 
-export const createUser = async (data: Record<string, string>): Promise<string | undefined> => {
-  const users = await getUsers();
-  const hasUser = users.find((user) => user.Username === data.Username);
-  if (!hasUser) {
+export const createUser = async (data: UserData): Promise<{status: number, message: string}> => {
+  try {
+    await getUserbyId(data.username);
+      return {
+        status: 200,
+        message: "User already exists"
+    };
+  } catch (err) {
     try {
-      const response = await axios.post('http://localhost:3001/users', data);
-      return response.statusText;
-    } catch (error) {
+      const response = await axios.post('http://localhost:3001/users', { 
+        id: data.username.toLowerCase(), 
+        name: data.fullname, 
+        email: data.email, 
+        password: data.password
+      });
+      return {
+        status: response.status,
+        message: response.statusText
+      };
+    } catch (err) {
       throw new Error('Can\'t create a user');
     }
   }
-  return 'This username is already exist';
+};
+
+export const getTweets = async (): Promise<TweetInfo[]>  => {
+  try {
+    const tweetsList = await axios.get(`http://localhost:3001/tweets`);
+    return tweetsList.data;
+  } catch (err) {
+    throw new Error('Unknown error');
+  }
+};
+
+export const createTweet = async (data: {text: string, author_id: string}): Promise<{status: number}> => {
+  try {
+    const response = await axios.post('http://localhost:3001/tweets', data);
+    return {
+      status: response.status
+    };
+  } catch (err) {
+    throw new Error('Can\'t create a tweet');
+  }
 };

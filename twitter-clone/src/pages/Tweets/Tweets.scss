@@ -1,0 +1,19 @@
+@use '../../styles/mixins.scss';
+
+.tweets {
+  &__wrapper {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    form {
+      margin-bottom: 30px;
+    }
+  }
+  
+  &__textarea {
+    @include mixins.input-style;
+    width: 100%;
+    outline: none;
+  }
+}
