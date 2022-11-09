@@ -1,0 +1,10 @@
+@use '../../styles/variables.scss';
+
+.no-page {
+  width: 600px;
+  margin: 0 auto;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 20%;
+  color: variables.$dark-purple;
+}

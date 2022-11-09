@@ -1,5 +1,8 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
 .header {
-  background: #7db0b4;
+  background: variables.$base-green;
   min-height: 70px;
   display: flex;
   align-items: center;
@@ -22,16 +25,8 @@
     display: flex;
     align-items: center;
 
-    &--initials {
-      display: flex;
-      width: 50px;
-      height: 50px;
-      background: white;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      font-size: 26px;
-      margin-left: 20px;
+    &--abbr {
+      @include mixins.avatar-style;
     }
 
     &--logout {
@@ -39,7 +34,7 @@
       background: none;
       cursor: pointer;
       margin-left: 10px;
-      color: #622569;
+      color: variables.$dark-purple;
       font-weight: 600;
     }
   }

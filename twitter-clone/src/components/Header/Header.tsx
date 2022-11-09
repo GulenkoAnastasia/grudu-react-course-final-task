@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/twitter_icon.svg";
-import { getUserbyId } from '../../server/server';
+import { getUserbyId } from '../../api/api';
+import { getUserAbbr } from '../../utils/getUserAbbr';
 import { UserContext } from '../../utils/UserContext';
 import './Header.scss';
 
@@ -24,14 +25,6 @@ export const Header: React.FC = () => {
       }
     })();
   }, [userId]);
-  
-  const getUserInitials = (): string => {
-    if(userName) {
-      const [firstName, lastName] = userName.split(' ');
-      return `${firstName[0]}${lastName[0]}`.toUpperCase();
-    }
-    return '';
-  };
 
   return (
     <div className='header'>
@@ -42,7 +35,7 @@ export const Header: React.FC = () => {
         </div>
         <div className='header__user'>
           <span>{userName}</span>
-          <span className='header__user--initials'>{getUserInitials()}</span>
+          <span className='header__user--abbr'>{userName && getUserAbbr(userName)}</span>
           {userName &&
             <button className='header__user--logout' onClick={handleSignOut}>Log out</button>
           }

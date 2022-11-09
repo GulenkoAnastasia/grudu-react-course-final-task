@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ErrorPopup } from '../../components/ErrorPopup/ErrorPopup';
 import { Form } from '../../components/Form';
-import { getUserbyId } from '../../server/server';
+import { getUserbyId } from '../../api/api';
 import { UserData } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
 import { loginSchema } from '../../validation/userValidation';
@@ -18,10 +18,8 @@ export const LoginPage: React.FC = () => {
   };
 
   const handleSubmit = async (values: UserData): Promise<any> => {
-    console.log(values);
     try {
       const response = await getUserbyId(values.username);
-      console.log(response);
       if(response.password === values.password) {
         localStorage.setItem('userId', JSON.stringify(values.username));
         setUserId(values.username);

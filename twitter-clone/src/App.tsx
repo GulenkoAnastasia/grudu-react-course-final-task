@@ -6,6 +6,7 @@ import { TweetsPage } from './pages/Tweets/Tweets';
 import { UserContext } from './utils/UserContext';
 import './App.scss';
 import { Header } from './components/Header/Header';
+import { NoPage } from './pages/NoPage/NoPage';
 
 export const App: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(() => {
@@ -22,7 +23,7 @@ export const App: React.FC = () => {
           <Route path="/" element={<LoginPage />}/>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/tweets" element={<TweetsPage />} />
-          <Route path="/*" element={'Page not found'} />
+          <Route path="/*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

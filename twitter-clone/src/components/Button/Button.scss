@@ -1,5 +1,7 @@
+@use '../../styles/variables.scss';
+
 .form-button {
-  background: #622569;
+  background: variables.$dark-purple;
   width: 120px;
   height: 40px;
   border-radius: 4px;

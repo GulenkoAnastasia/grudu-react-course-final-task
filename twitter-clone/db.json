@@ -16,9 +16,14 @@
       "text": "Describe your relationship with JavaScript with one word."
     },
     {
-      "text": "Hello",
-      "author_id": "Hello",
+      "text": "Please describe the advantages of using React.",
+      "author_id": "nansi",
       "id": 4
+    },
+    {
+      "text": "When we send a request via browser,  what happens under the hood ?",
+      "author_id": "jackmontes",
+      "id": 7
     }
   ],
   "users": [
@@ -48,6 +53,18 @@
       "name": "Nansi Gona",
       "email": "nansns@gam.com",
       "password": "12345678"
+    },
+    {
+      "id": "amelidomini",
+      "name": "Ameli Domini",
+      "email": "nansjn@kndknd.com",
+      "password": "44444444"
+    },
+    {
+      "id": "jackmontes",
+      "name": "Jack Montes",
+      "email": "ndmdn@knke.com",
+      "password": "321321321"
     }
   ]
 }

@@ -2,22 +2,30 @@ import React, { FormEvent, SyntheticEvent, useContext, useEffect, useState } fro
 import { Button } from '../../components/Button';
 import { ErrorPopup } from '../../components/ErrorPopup/ErrorPopup';
 import { Tweet } from '../../components/Tweet/Tweet';
-import { createTweet, getTweets, getUserbyId} from '../../server/server';
+import { createTweet, getTweets, getUserbyId} from '../../api/api';
 import { TweetInfo } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
 import './Tweets.scss';
 
 export const TweetsPage: React.FC = () => {
   const [tweetList, setTweetList] = useState<TweetInfo[]>([]);
-  const [tweetWithAuthor, setTweetWithAuthor] = useState<{author: string, text: string}[]>([]);
+  const [tweetWithAuthor, setTweetWithAuthor] = useState<{author: string, text: string, id: string}[]>([]);
   const [error, setError] = useState<string>('');
+  const [toggleAdd, setToggleAdd] = useState<boolean>(false);
   const [newTweet, setNewTweet] = useState<string>('');
-  const {userId} = useContext(UserContext);
+  const { userId } = useContext(UserContext);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if(newTweet && userId) {
-      await createTweet({text: newTweet, author_id: newTweet});
+      try {
+        await createTweet({text: newTweet, author_id: userId});
+        setToggleAdd(!toggleAdd);
+        setNewTweet('');
+      } catch (err) {
+        const error = err as unknown as Error;
+        setError(error.message);
+      }
     }
   };
 
@@ -28,13 +36,13 @@ export const TweetsPage: React.FC = () => {
   useEffect(() => {
     (async() => {
       try {
-        setTweetList(await getTweets());
+        setTweetList((await getTweets()).reverse());
       } catch (err) {
         const error = err as unknown as Error;
         setError(error.message);
       }
     })();
-  }, []);
+  }, [toggleAdd]);
 
   useEffect (() => {
     (async () => {
@@ -42,7 +50,8 @@ export const TweetsPage: React.FC = () => {
         const user = await getUserbyId(tweet.author_id);
         return {
           author: user.name,
-          text: tweet.text
+          text: tweet.text,
+          id: tweet.id
         };
       });
       setTweetWithAuthor(await Promise.all(tweets));
@@ -50,6 +59,8 @@ export const TweetsPage: React.FC = () => {
   }, [tweetList]);
 
   return (
+    <>
+    {userId && 
     <div className='tweets__wrapper'>
       <form onSubmit={handleSubmit}>
         <textarea 
@@ -62,9 +73,12 @@ export const TweetsPage: React.FC = () => {
           />
         <Button text='Tweet'></Button>
       </form>
-      {tweetWithAuthor.map((tweet) => <Tweet key={tweet.author} userFullName={tweet.author} text={tweet.text}></Tweet>)}
-
+      <div>
+      {tweetWithAuthor.reverse().map((tweet) => <Tweet key={tweet.id} userFullName={tweet.author} text={tweet.text}></Tweet>)}
+      </div>
       <ErrorPopup text={error} className={error ? 'error-show': ''}></ErrorPopup>
     </div>
+    }
+    </>
   );
 };

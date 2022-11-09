@@ -6,8 +6,16 @@
     margin: 0 auto;
     padding-top: 100px;
 
+    > div {
+      overflow-y: auto;
+      height: 500px;
+    }
+
     form {
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end
     }
   }
   
@@ -15,5 +23,6 @@
     @include mixins.input-style;
     width: 100%;
     outline: none;
+    margin-bottom: 10px;
   }
 }
