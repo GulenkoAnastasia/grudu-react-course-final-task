@@ -2,9 +2,7 @@ import { useFormik } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
 import { UserData } from '../../utils/types';
-import { Button } from '../Button';
-import { FormText } from '../FormText';
-import { Input } from '../Input';
+import { Button, FormText, Input } from '../';
 interface initialValuesInfo {
   view: string
   initialValues: UserData

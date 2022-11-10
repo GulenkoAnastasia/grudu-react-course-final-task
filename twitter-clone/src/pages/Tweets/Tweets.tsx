@@ -1,8 +1,7 @@
 import React, { FormEvent, SyntheticEvent, useContext, useEffect, useState } from 'react';
-import { Button } from '../../components/Button';
-import { ErrorPopup } from '../../components/ErrorPopup/ErrorPopup';
-import { Tweet } from '../../components/Tweet/Tweet';
-import { createTweet, getTweets, getUserbyId} from '../../api/api';
+import { Button, ErrorPopup, Tweet } from '../../components';
+import { createTweet, getTweets} from '../../api/tweets';
+import { getUserbyId } from '../../api/user';
 import { TweetInfo } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
 import './Tweets.scss';

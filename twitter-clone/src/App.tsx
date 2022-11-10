@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { LoginPage } from './pages/LogInPage';
-import { SignupPage } from './pages/SignupPage';
-import { TweetsPage } from './pages/Tweets/Tweets';
+import { LoginPage, SignupPage, TweetsPage, NoPage } from './pages';
+import { Header } from './components';
 import { UserContext } from './utils/UserContext';
 import './App.scss';
-import { Header } from './components/Header/Header';
-import { NoPage } from './pages/NoPage/NoPage';
 
 export const App: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(() => {
     const user = localStorage.getItem('userId');
-    return user !== null ? JSON.parse(user): null;
+    return user && JSON.parse(user);
   });
 
   return (

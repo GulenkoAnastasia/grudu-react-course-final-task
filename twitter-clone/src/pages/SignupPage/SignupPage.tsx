@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Form } from '../../components/Form';
+import { Form, ErrorPopup } from '../../components';
 import { signupShema } from '../../validation/userValidation';
-import { createUser } from '../../api/api';
+import { createUser } from '../../api/user';
 import { useNavigate } from 'react-router-dom';
-import { ErrorPopup } from '../../components/ErrorPopup/ErrorPopup';
 import { UserData } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
 
@@ -29,7 +28,8 @@ export const SignupPage: React.FC = () => {
         setError(response.message);
       }
     } catch (err) {
-      setError('404 Can\t create an account');
+      const error = err as unknown as Error;
+      setError(error.message);
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/twitter_icon.svg";
-import { getUserbyId } from '../../api/api';
+import { getUserbyId } from '../../api/user';
 import { getUserAbbr } from '../../utils/getUserAbbr';
 import { UserContext } from '../../utils/UserContext';
 import './Header.scss';

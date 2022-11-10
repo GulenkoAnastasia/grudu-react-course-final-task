@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ErrorPopup } from '../../components/ErrorPopup/ErrorPopup';
-import { Form } from '../../components/Form';
-import { getUserbyId } from '../../api/api';
+import { ErrorPopup, Form } from '../../components';
+import { getUserbyId } from '../../api/user';
 import { UserData } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
 import { loginSchema } from '../../validation/userValidation';

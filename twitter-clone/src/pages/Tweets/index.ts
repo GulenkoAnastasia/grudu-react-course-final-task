@@ -1,1 +1,1 @@
-export { TweetsPage } from './Tweets';
+export * from './Tweets';

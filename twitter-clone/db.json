@@ -24,6 +24,11 @@
       "text": "When we send a request via browser,  what happens under the hood ?",
       "author_id": "jackmontes",
       "id": 7
+    },
+    {
+      "text": "What is css selectors specificity ?",
+      "author_id": "nansi",
+      "id": 8
     }
   ],
   "users": [
