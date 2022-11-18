@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { LoginPage, SignupPage, TweetsPage, NoPage } from './pages';
+import { LoginPage, SignupPage, TweetsPage, NotFoundPage } from './pages';
 import { Header } from './components';
 import { UserContext } from './utils/UserContext';
 import './App.scss';
@@ -20,7 +20,7 @@ export const App: React.FC = () => {
           <Route path="/" element={<LoginPage />}/>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/tweets" element={<TweetsPage />} />
-          <Route path="/*" element={<NoPage />} />
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

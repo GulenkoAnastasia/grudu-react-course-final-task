@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ErrorPopup, Form } from '../../components';
+import { InfoPopup, Form } from '../../components';
 import { getUserbyId } from '../../api/user';
 import { UserData } from '../../utils/types';
 import { UserContext } from '../../utils/UserContext';
@@ -41,7 +41,7 @@ export const LoginPage: React.FC = () => {
       validationSchema={loginSchema}
       onSubmit={handleSubmit}
       />
-    <ErrorPopup text={error} className={error ? 'error-show': ''}></ErrorPopup>
+    <InfoPopup text={error} className={error ? 'info-show': ''}></InfoPopup>
       </>
   );
 };

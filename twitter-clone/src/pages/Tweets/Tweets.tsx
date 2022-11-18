@@ -1,5 +1,5 @@
 import React, { FormEvent, SyntheticEvent, useContext, useEffect, useState } from 'react';
-import { Button, ErrorPopup, Tweet } from '../../components';
+import { Button, InfoPopup, Tweet } from '../../components';
 import { createTweet, getTweets} from '../../api/tweets';
 import { getUserbyId } from '../../api/user';
 import { TweetInfo } from '../../utils/types';
@@ -70,12 +70,12 @@ export const TweetsPage: React.FC = () => {
           rows={5}
           onChange={handleChange}
           />
-        <Button text='Tweet'></Button>
+        <Button label='Tweet' className='form-button'></Button>
       </form>
       <div>
       {tweetWithAuthor.reverse().map((tweet) => <Tweet key={tweet.id} userFullName={tweet.author} text={tweet.text}></Tweet>)}
       </div>
-      <ErrorPopup text={error} className={error ? 'error-show': ''}></ErrorPopup>
+      <InfoPopup text={error} className={error ? 'info-show': ''}></InfoPopup>
     </div>
     }
     </>

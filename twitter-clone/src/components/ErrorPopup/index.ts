@@ -1,1 +1,1 @@
-export * from './ErrorPopup';
+export * from './InfoPopup';

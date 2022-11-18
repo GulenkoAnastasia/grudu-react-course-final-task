@@ -37,7 +37,7 @@ export const Form: React.FC<initialValuesInfo> = ({ view, initialValues, validat
             id={key}>
             </Input>;
         })}
-          <Button text={view}></Button>
+          <Button label={view} className='form-button'></Button>
       </form>
       <FormText view={view}></FormText>
     </div>

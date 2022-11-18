@@ -1,5 +1,5 @@
 export { Button } from './Button';
-export { ErrorPopup } from './ErrorPopup';
+export { InfoPopup } from './ErrorPopup';
 export { Form } from './Form';
 export { FormText} from './FormText';
 export { Header } from './Header';

@@ -5,6 +5,7 @@ import { getUserbyId } from '../../api/user';
 import { getUserAbbr } from '../../utils/getUserAbbr';
 import { UserContext } from '../../utils/UserContext';
 import './Header.scss';
+import { Button } from '../Button';
 
 export const Header: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
@@ -37,7 +38,7 @@ export const Header: React.FC = () => {
           <span>{userName}</span>
           <span className='header__user--abbr'>{userName && getUserAbbr(userName)}</span>
           {userName &&
-            <button className='header__user--logout' onClick={handleSignOut}>Log out</button>
+            <Button className='header__user--logout' label='Log out' onClick={handleSignOut}></Button>
           }
         </div>
       </div>

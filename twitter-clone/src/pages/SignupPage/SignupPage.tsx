@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, ErrorPopup } from '../../components';
+import { Form, InfoPopup } from '../../components';
 import { signupShema } from '../../validation/userValidation';
 import { createUser } from '../../api/user';
 import { useNavigate } from 'react-router-dom';
@@ -43,7 +43,7 @@ export const SignupPage: React.FC = () => {
         onSubmit={handleSignUp}
         />
     </div>
-    <ErrorPopup text={error} className={error ? 'error-show': ''}></ErrorPopup>
+    <InfoPopup text={error} className={error ? 'info-show': ''}></InfoPopup>
     </>
   );
 };
